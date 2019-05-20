@@ -1,13 +1,8 @@
 /*PGR-GNU*****************************************************************
-File: astarV3.0.sql
+File: _foo.sql
 
-Generated with Template by:
-Copyright (c) 2015 pgRouting developers
-Mail: project@pgrouting.org
-
-Function's developer:
-Copyright (c) 2015 Celia Virginia Vergara Castillo
-Mail:
+Copyright (c) 2019 Gudesa Venkata Sai Akhil
+Mail: gvs.akhil1997@gmail.com
 
 ------
 
@@ -29,14 +24,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 -----------------
 -----------------
--- _foo
------------------
------------------
-
-
------------------
 -- pgr_foo
 -----------------
+-----------------
+
 
 
 CREATE OR REPLACE FUNCTION _pgr_foo(
@@ -60,8 +51,8 @@ CREATE OR REPLACE FUNCTION _pgr_foo(
     OUT cost FLOAT,
     OUT agg_cost FLOAT)
 RETURNS SETOF RECORD AS
-'MODULE_PATHNAME', 'astarManyToMany'
-LANGUAGE c VOLATILE STRICT;
+'MODULE_PATHNAME', 'foo'
+LANGUAGE C VOLATILE STRICT;
 
 -- COMMENTS
 
