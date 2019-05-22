@@ -27,20 +27,20 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 ********************************************************************PGR-GNU*/
 
-#include "drivers/astar/astar_driver.h"
+#include "drivers/foo/foo_driver.h"
 
 #include <sstream>
 #include <deque>
 #include <algorithm>
 #include <vector>
-
+#if 0
 #include "astar/pgr_astar.hpp"
-
+#endif
 #include "cpp_common/pgr_alloc.hpp"
 #include "cpp_common/pgr_assert.h"
 
 
-
+#if 0
 template < class G >
 std::deque<Path>
 pgr_astar(
@@ -73,7 +73,7 @@ pgr_astar(
     }
     return paths;
 }
-
+#endif
 
 /************************************************************
   edges_sql TEXT,
@@ -81,7 +81,7 @@ pgr_astar(
   start_vid BIGINT,
   end_vid BIGINT  directed BOOLEAN DEFAULT true,
  ***********************************************************/
-void do_pgr_astarManyToMany(
+void do_pgr_foo(
         Pgr_edge_xy_t *edges, size_t total_edges,
         int64_t  *start_vidsArr, size_t size_start_vidsArr,
         int64_t  *end_vidsArr, size_t size_end_vidsArr,
@@ -100,7 +100,6 @@ void do_pgr_astarManyToMany(
     std::ostringstream notice;
     std::ostringstream err;
     try {
-        #if 0
         pgassert(!(*log_msg));
         pgassert(!(*err_msg));
         pgassert(!(*return_tuples));
@@ -125,16 +124,20 @@ void do_pgr_astarManyToMany(
                     pgrouting::extract_vertices(edges, total_edges),
                     gType);
             digraph.insert_edges(edges, total_edges);
+            #if 0
             paths = pgr_astar(digraph, start_vids, end_vids,
                     heuristic, factor, epsilon, only_cost, normal);
+            #endif
         } else {
             log << "Working with Undirected Graph\n";
             pgrouting::xyUndirectedGraph undigraph(
                     pgrouting::extract_vertices(edges, total_edges),
                     gType);
             undigraph.insert_edges(edges, total_edges);
+            #if 0
             paths = pgr_astar(undigraph, start_vids, end_vids,
                     heuristic, factor, epsilon, only_cost, normal);
+            #endif
         }
 
         size_t count(0);
@@ -160,7 +163,6 @@ void do_pgr_astarManyToMany(
         *notice_msg = notice.str().empty()?
             *notice_msg :
             pgr_msg(notice.str().c_str());
-        #endif
     } catch (AssertFailedException &except) {
         (*return_tuples) = pgr_free(*return_tuples);
         (*return_count) = 0;
