@@ -1,6 +1,11 @@
 /*PGR-GNU*****************************************************************
 File: _foo.sql
 
+Generated with Template by:
+Copyright (c) 2015 pgRouting developers
+Mail: project@pgrouting.org
+
+Function's developer:
 Copyright (c) 2019 Gudesa Venkata Sai Akhil
 Mail: gvs.akhil1997@gmail.com
 
