@@ -26,13 +26,13 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 ********************************************************************PGR-GNU*/
 
-#ifndef INCLUDE_DRIVERS_ASTAR_ASTAR_DRIVER_H_
-#define INCLUDE_DRIVERS_ASTAR_ASTAR_DRIVER_H_
+#ifndef INCLUDE_DRIVERS_FOO_FOO_DRIVER_H_
+#define INCLUDE_DRIVERS_FOO_FOO_DRIVER_H_
 #pragma once
 
 /* for size-t */
 #ifdef __cplusplus
-#   include <cstddef>
+#   include <cstddef> 
 #else
 #   include <stddef.h>
 #endif
@@ -51,7 +51,7 @@ extern "C" {
       start_vid BIGINT,
       end_vid BIGINT  directed BOOLEAN DEFAULT true,
      ********************************************************/
-    void do_pgr_astarManyToMany(
+    void do_pgr_foo(
             Pgr_edge_xy_t  *data_edges,
             size_t total_edges,
             int64_t  *start_vidsArr, size_t size_start_vidsArr,
@@ -73,4 +73,4 @@ extern "C" {
 }
 #endif
 
-#endif  // INCLUDE_DRIVERS_ASTAR_ASTAR_DRIVER_H_
+#endif  // INCLUDE_DRIVERS_FOO_FOO_DRIVER_H_
