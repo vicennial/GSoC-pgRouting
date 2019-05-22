@@ -38,10 +38,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #include "c_common/arrays_input.h"
 #include "c_common/check_parameters.h"
 
-#include "drivers/astar/astar_driver.h"
+#include "drivers/foo/foo_driver.h"
 
-PGDLLEXPORT Datum astarManyToMany(PG_FUNCTION_ARGS);
-PG_FUNCTION_INFO_V1(astarManyToMany);
+PGDLLEXPORT Datum foo(PG_FUNCTION_ARGS);
+PG_FUNCTION_INFO_V1(foo);
 
 #if 0
 void
@@ -120,7 +120,7 @@ process(char* edges_sql,
     char *notice_msg = NULL;
     char *err_msg = NULL;
     clock_t start_t = clock();
-    do_pgr_astarManyToMany(
+    do_pgr_foo(
             edges, total_edges,
             start_vidsArr, size_start_vidsArr,
             end_vidsArr, size_end_vidsArr,
@@ -161,7 +161,7 @@ process(char* edges_sql,
 }
 
 PGDLLEXPORT Datum
-astarManyToMany(PG_FUNCTION_ARGS) {
+foo(PG_FUNCTION_ARGS) {
     FuncCallContext     *funcctx;
     TupleDesc           tuple_desc;
 
