@@ -47,7 +47,7 @@ CREATE OR REPLACE FUNCTION pgr_foo(
 
 RETURNS SETOF RECORD AS
 $BODY$
-    SELECT * 
+    SELECT a.seq, a.path_seq, a.node, a.edge, a.cost, a.agg_cost 
     FROM _pgr_foo(_pgr_get_statement($1), ARRAY[$2]::BIGINT[],  ARRAY[$3]::BIGINT[], $4, $5, $6::FLOAT, $7::FLOAT) AS a;
 $BODY$
 LANGUAGE sql VOLATILE STRICT
