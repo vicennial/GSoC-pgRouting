@@ -121,7 +121,8 @@ void do_pgr_foo(
         std::vector< int64_t > start_vids(
                 start_vidsArr,
                 start_vidsArr + size_start_vidsArr);
-
+        // TODO(vicennial): use or remove parameters: heuristic, factor, epsilon, only_cost, normal
+        
         graphType gType = directed? DIRECTED: UNDIRECTED;
 
         std::deque< Path >paths;
