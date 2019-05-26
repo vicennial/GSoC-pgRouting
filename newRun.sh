@@ -18,7 +18,7 @@ dijkstra driving_distance ksp lineGraph max_flow mincut spanningTree
 pickDeliver topology trsp tsp vrp_basic vrppdtw withPoints
 alpha_shape
 "
-TESTDIR="components"
+TESTDIR="foo"
 #TESTDIR=""
 
 # Compiler setup
@@ -98,13 +98,13 @@ echo --------------------------------------------
 
 for t in $TESTDIR
 do
-    tools/testers/algorithm-tester.pl  -alg $t -pgport $PGPORT -docmentation
+   # tools/testers/algorithm-tester.pl  -alg $t -pgport $PGPORT -docmentation
     sleep 1
 #    tools/testers/algorithm-tester.pl  -alg $t -pgport $PGPORT -debug1
 #    sleep 1
     tools/developer/taptest.sh $t
     sleep 1
-    tools/testers/algorithm-tester.pl  -alg $t -pgport $PGPORT
+    #tools/testers/algorithm-tester.pl  -alg $t -pgport $PGPORT
     sleep 1
 done
 
