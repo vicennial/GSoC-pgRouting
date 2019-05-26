@@ -13,7 +13,7 @@ SELECT function_returns('pgr_foo',
 
 
 -- ONE TO ONE
-SELECT style_astar('pgr_astar', ', 2, 3, true)');
+SELECT style_foo('pgr_foo', ', 2, 3, true)');
 
 
 SELECT finish();
