@@ -23,7 +23,7 @@ TESTDIR="foo"
 
 # Compiler setup
 COMPILER="4.8 4.9 5 6 7 8"
-COMPILER="8"
+COMPILER="6"
 #COMPILER='Default'
 
 # when more than one postgres version is installed on the computer
@@ -31,7 +31,7 @@ PGSQL_VER="10"
 PGPORT=5433
 PGSQL_VER="9.5"
 PGPORT=5432
-PGUSER="akhil"
+PGUSER="root"
 
 function test_compile {
 
