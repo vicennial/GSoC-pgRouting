@@ -1,6 +1,6 @@
 \i setup.sql
 
-SELECT plan(2);
+SELECT plan(348);
 
 
 SELECT has_function('pgr_foo',

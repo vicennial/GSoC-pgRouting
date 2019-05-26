@@ -1,0 +1,14 @@
+BEGIN;
+BEGIN
+SET client_min_messages TO NOTICE;
+SET
+--q1
+SELECT * FROM pgr_foo(
+    \'SELECT id, source, target, cost, reverse_cost, x1, y1, x2, y2 FROM edge_table\',
+    2, 12);
+ seq | path_seq | node | edge | cost | agg_cost 
+-----+----------+------+------+------+----------
+(0 rows)
+
+ROLLBACK;
+ROLLBACK
